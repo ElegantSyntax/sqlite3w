@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SQLite3W", "SQLite3W\SQLite3W.vcproj", "{BF0307D0-8387-45D1-8FBB-ADFE2A33F955}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF0307D0-8387-45D1-8FBB-ADFE2A33F955}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BF0307D0-8387-45D1-8FBB-ADFE2A33F955}.Debug|Win32.Build.0 = Debug|Win32
+		{BF0307D0-8387-45D1-8FBB-ADFE2A33F955}.Release|Win32.ActiveCfg = Release|Win32
+		{BF0307D0-8387-45D1-8FBB-ADFE2A33F955}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
