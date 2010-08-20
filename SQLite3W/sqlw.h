@@ -26,9 +26,10 @@ class SQLdb
 		
 		bool query(std::string SQL);				// Query the database
 
-		bool step();	// Move through the rows within a result
+		bool fetch_row();	// Move through the rows within a result
 
 		std::string column(int COLUMN_INDEX);	// Return a string with the value of the the column
+		std::string column(std::string COLUMN_NAME);	// Return a string with the value of the the column
 
 		bool close();
 };

@@ -12,10 +12,13 @@ int main()
 
 	db->query(query);
 
-	 while (db->step())
+	 while (db->fetch_row())
 	 {
 		 std::cout << "Name: " << db->column(0) << std::endl;			
 		 std::cout << "Number: " << db->column(1) << std::endl << std::endl;			
+		 
+		 std::cout << "Name: " << db->column("name") << std::endl;			
+		 std::cout << "Number: " << db->column("number") << std::endl << std::endl;			
 	 }
 
 	 db->close();

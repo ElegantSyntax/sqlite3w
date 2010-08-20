@@ -40,7 +40,7 @@ bool SQLdb::query(std::string SQL)
 	}
 }
 
-bool SQLdb::step()
+bool SQLdb::fetch_row()
 {
 	if (sqlite3_step(this->res) == SQLITE_ROW)
 	{
@@ -57,6 +57,25 @@ std::string SQLdb::column(int COLUMN_INDEX)
 	{
 		std::string result(reinterpret_cast<const char*>(sqlite3_column_text(this->res, COLUMN_INDEX)));
 		return result;
+	}
+
+	return "ERROR: NOTHING!";
+}
+
+std::string SQLdb::column(std::string COLUMN_NAME)
+{
+	int numCol = sqlite3_column_count(this->res);
+
+	if (numCol > 0)
+	{
+		for (int i = 0; i < numCol; i++)
+		{
+			if (COLUMN_NAME == sqlite3_column_name(this->res, i))
+			{
+				std::string result(reinterpret_cast<const char*>(sqlite3_column_text(this->res, i)));
+				return result;
+			}
+		}
 	}
 
 	return "ERROR: NOTHING!";
