@@ -8,6 +8,16 @@ int main()
 	
 	db->connect("test.db");
 
+	if (db->table_exists("test"))
+	{
+		db->query("INSERT INTO test (name, number) VALUES ('Joe3', 8)");
+
+		if (db->fetch_row())
+		{
+			std::cout << "Insert Succeeded";
+		}
+	}
+
 	std::string query = "SELECT * FROM test";
 
 	db->query(query);

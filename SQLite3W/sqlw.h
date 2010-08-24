@@ -26,6 +26,8 @@ class SQLdb
 		
 		bool query(std::string SQL);				// Query the database
 
+		bool table_exists(std::string TABLE_NAME);	// Determine whether or a not a table exists
+
 		bool fetch_row();	// Move through the rows within a result
 
 		std::string column(int COLUMN_INDEX);	// Return a string with the value of the the column

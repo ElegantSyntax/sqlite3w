@@ -38,6 +38,21 @@ bool SQLdb::query(std::string SQL)
 		sqlite3_close(this->db);
 		return false;
 	}
+	
+	return true;
+}
+
+bool SQLdb::table_exists(std::string TABLE_NAME)
+{
+	std::string SQL = "";
+	SQL = "SELECT name FROM sqlite_master ";
+	SQL+= "WHERE type='table' AND name='";
+	SQL+=  TABLE_NAME;
+	SQL+=  "'";
+
+	this->query(SQL);
+
+	return this->fetch_row();
 }
 
 bool SQLdb::fetch_row()
